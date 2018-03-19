@@ -1,0 +1,56 @@
+body {
+	font: normal 15px/15px Helvetica;
+	background: #259286;
+	margin: 0;
+}
+
+ul.player {
+	width: 180px; /*for margin auto (its block el by default)*/
+	margin: 0 auto; 
+	padding: 0;
+	margin-top: 100px;
+	list-style: none;
+}
+
+ul.player li { /*not inline-block*/
+	border-bottom: 1px solid #999;
+	color: #444;
+	padding: 9px 5px 10px 40px;
+	background: url(images/media_btn.png) no-repeat;
+	background-color: #EAE3CB;
+	background-position: 8px 5px;
+	cursor: pointer;
+}
+
+ul.player li:first-child {
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+}
+
+ul.player li:last-child {
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-bottom: none;
+}
+
+ul.player li:hover {
+	background-color: #475B62;
+	color: #FCF4DC;
+}
+
+ul.player li#playing {
+	background: url(images/media_play_btn.png) no-repeat;
+	background-color: #FCF4DC;
+	color: #2176C7;
+	font-weight: bold;
+	background-position: 8px 5px;
+}
+
+ul.player li#paused {
+	background: url(images/media_pause_btn.png) no-repeat;
+	background-color: red;
+	color: #FFF;
+	font-weight: bold;
+	background-position: 8px 5px;
+}
+

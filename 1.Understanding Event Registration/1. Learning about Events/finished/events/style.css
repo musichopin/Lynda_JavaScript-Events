@@ -1,0 +1,22 @@
+body {
+  background: #EAE3CB;
+}
+
+ul {
+  width: 320px;
+  margin: 0 auto;
+  margin-top:50px;
+  padding: 5px;
+  border: 5px solid red;
+}
+
+ul div {
+	position: relative;
+	left: 5px;
+	/*alt: margin-left: 5px;*/
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+}

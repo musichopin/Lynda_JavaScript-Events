@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Events</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <ul>
+    <li><img src="images/ylw.gif" alt="yellow"></li>
+    <li><img src="images/org.gif" alt="orange"></li>
+    <li><img src="images/ppl.gif" alt="purple"></li>
+    <li><img src="images/blu.gif" alt="blue"></li>
+    <li><img src="images/pnk.gif" alt="pink" id="pink"></li>
+    <li><img src="images/grn.gif" alt="green"></li>
+    <li><img src="images/ygr.gif" alt="ygreen"></li>
+    <li><img src="images/gry.gif" alt="gray"></li>
+    <li><img src="images/red.gif" alt="red"></li>
+  </ul>
+<script>
+  document.getElementById('pink').addEventListener('click', function(e) {
+    console.log(e);
+  }, false);
+</script>
+
+</body>
+</html>

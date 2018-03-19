@@ -1,0 +1,38 @@
+body {
+  margin: 0; /*resets*/
+  background: #042029; /*h2 overrides*/
+  font-family: 'Merriweather'; /*h2 overrides*/
+  color: #EAE3CB; /*h2 overrides*/
+}
+
+#art {
+  width: 320px;
+  margin: 0 auto;
+}
+
+#art h2 {
+  background: orange; /*overrides*/
+  font-family: 'Bree Serif'; /*overrides*/
+  font-size: 2em;
+  color: #A57706; /*overrides*/
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#art p {padding: 5px; border: 5px solid red; margin: 5px; position: relative; right: -50px;}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+ul li img {
+  width: 100px;
+  border: 1px solid #FCF4DC;
+}
