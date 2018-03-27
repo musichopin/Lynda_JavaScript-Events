@@ -21,7 +21,7 @@ var dragndrop = (function() {
 // screenX/screenY (rel 2 user screen), clientX/clientY (rel 2 window), 
 // pageX/pageY (rel 2 html), offsetX/offsetY (rel 2 target element)
 
-//since body is not draggable we dont have this code:if(e.target.tagName === "IMG"){..}
+//since there are no draggable items other than images we dont have this code: if(e.target.tagName === "IMG"){..}
     whichArt = e.target;
     myX = e.offsetX === undefined ? e.layerX : e.offsetX; // 2'si de olur
     myY = e.offsetY === undefined ? e.layerY : e.offsetY;    

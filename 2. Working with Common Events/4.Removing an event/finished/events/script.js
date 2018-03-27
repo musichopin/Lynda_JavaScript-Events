@@ -12,8 +12,8 @@ document.querySelector('.grid').addEventListener('mouseover', function(e) {
 
     e.target.addEventListener('mouseout', function handler(d) {
 //*e.target, d.target ve this kw'ün hepsi bu callback içinde aynı object*
-      var myNode = d.target.parentNode.querySelector('div.preview');//alt1:e.tar...
-// alt2: var myNode = d.target.parentNode.childNodes[1]
+      var myNode = d.target.parentNode.querySelector('div.preview');
+// alt: var myNode = d.target.parentNode.childNodes[1]
       myNode.parentNode.removeChild(myNode);//we may use myElement instead of myNode
       e.target.removeEventListener('mouseout', handler, false);
 //alt: this.removeEventListener('mouseout', arguments.callee, false);
