@@ -39,6 +39,7 @@ ul li {
 
 ul li div.preview {
   position: absolute;
+/*top and left props are needless bc of previewMover func?*/  
   top: -100px;
   left: 110px;
   z-index: 100;

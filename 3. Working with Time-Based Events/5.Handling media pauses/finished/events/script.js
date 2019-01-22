@@ -10,33 +10,33 @@ jukebox.addEventListener('click', function(e) {
   var audioPlayer = document.querySelector('#player'); 
   // exists if audio played before and if audio isnt removed from dom when track ended
 
-  if (audioPlayer) {
+  if (audioPlayer) { // 1b. not 1st time audio being played
 
     if (lastSong===audioPlayer.getAttribute('src')) {
-      if (audioPlayer.paused) {// 3. same audio being resumed
+      if (audioPlayer.paused) { // 2b. same audio being resumed
         audioPlayer.play();
         e.target.id = 'playing';
-      } else if (audioPlayer.played) { // 2. same audio being paused
+      } else if (audioPlayer.played) { // 2a. same audio being paused
         audioPlayer.pause();
         e.target.id = 'paused';
       }
 
-    } else {// different audio being played
+    } else { // different audio being clicked
       audioPlayer.src = lastSong;
-      audioPlayer.play();
       if (document.querySelector('#playing')) {//transition from playing state
         document.querySelector('#playing').id='';//clears old playing style on li
       } else if (document.querySelector('#paused')) {//transition from paused state
         document.querySelector('#paused').id='';//clears old paused style on li
       }
-      e.target.id = 'playing';
+      e.target.id = 'playing'; //clicked li
+      audioPlayer.play();
     }
 
-  } else { // 1. first time audio being played
+  } else { // 1a. first time audio being played
     var audioPlayer = document.createElement('audio');
     audioPlayer.id = 'player';
-    e.target.id = 'playing';
     audioPlayer.src = lastSong;
+    e.target.id = 'playing'; //clicked li
     document.body.appendChild(audioPlayer);
     audioPlayer.play();
 

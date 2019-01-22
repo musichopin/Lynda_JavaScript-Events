@@ -20,11 +20,11 @@
 <script>
   document.getElementById('grid').addEventListener('click', function(e) {
     console.log("Clicked inside the UL");
-  }, false);
+  }, true); // true olup (capturing phase) e.stopPropagation(); denseydi asagidaki evente gitmeycekti
 
   document.getElementById('pink').addEventListener('click', function(e) {
     console.log(e.target.alt);
-    e.stopPropagation();
+    e.stopPropagation(); //click eventin ul'e taşınmasını engeller
   }, false);
 
 </script>

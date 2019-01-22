@@ -1,13 +1,12 @@
 document.querySelector('.preview').addEventListener('click', function handler(e) {
-
   var highRes = document.querySelector('.bgImg');
-  // *önceki listenerın domda yarattığı değişim görülür (if highRes not removed)*
+// *önceki listenerın domda yarattığı değişim görülür (if highRes not removed)*
 
-  if(highRes) { // if there is high res image
+  if(highRes) { // if there is high res image (2nd time)
     highRes.parentNode.parentNode.removeChild(highRes.parentNode);
-    this.removeEventListener('click', handler) // this: highRes
-// *no need to add and remove thumbnail's event since it remains on dom anyway*
-  } else {
+    this.removeEventListener('click', handler) // this = highRes
+//*no need to add and remove thumbnail's event since it remains on dom anyway*
+  } else { // thumbnail (1st time)
     var lowRes = e.target.src;
     var myOverlay = document.createElement('div');
     var highRes = document.createElement('img');
@@ -25,9 +24,9 @@ document.querySelector('.preview').addEventListener('click', function handler(e)
     mySpinner.src = 'images/spinner.gif';
     myOverlay.appendChild(mySpinner);
 
-    highRes.addEventListener('load', function() {
+    highRes.addEventListener('load', function() {//fires when img is loaded
       mySpinner.parentNode.removeChild(mySpinner);
-      this.addEventListener('click', handler) //for highRes to have its own event
+      this.addEventListener('click', handler)//4 highRes 2 get its own event
     });
   }
 }, false);
@@ -69,6 +68,7 @@ document.querySelector('.preview').addEventListener('click', function handler(e)
     lowRes.src = "images/taquitosandcheese_tn.jpg";
     lowRes.className = "preview";
     document.body.insertBefore(lowRes, document.body.childNodes[0])
+    // alt: document.body.appendChild(lowRes)
     lowRes.addEventListener('click', handler)
 
     highRes.parentNode.parentNode.removeChild(highRes.parentNode);

@@ -3,7 +3,7 @@ document.querySelector('.grid').addEventListener('mouseover', function(e) {
 
     var myElement = document.createElement('div');
     myElement.className = 'preview';
-    e.target.parentNode.appendChild(myElement);//appends to list
+    e.target.parentNode.appendChild(myElement);//appends to li
 
 // 3 step process: create el, change props, append the el to another el
     var myImg = document.createElement('img');

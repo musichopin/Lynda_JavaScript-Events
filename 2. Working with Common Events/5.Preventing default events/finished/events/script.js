@@ -1,13 +1,14 @@
 (function() {
-  var myElement; // might be declared as local var
+  var myElement;
 
+// to constantly/dynamically move the previewer via js
   var previewMover = function(f) {
     myElement.style.left = f.offsetX + 15 + 'px';
     myElement.style.top = f.offsetY + 15 + 'px';
   }
 
   document.querySelector('.grid').addEventListener('contextmenu', function major(e) {
-    e.preventDefault(); // prevents default right click function of os
+    e.preventDefault(); // prevents default right click function
     if (e.target.tagName === 'IMG') {
   // places the img on div
       myElement = document.createElement('div');
@@ -21,11 +22,11 @@
       myElement.appendChild(myImg);
 
   // gets rid of image on mouseout and removes 2 events
-      e.target.addEventListener('mouseout', function handler() {
+      e.target.addEventListener('mouseout', function() {
         myElement.parentNode.removeChild(myElement);
 
-        e.target.removeEventListener('mousemove', previewMover, false);
-        this.removeEventListener('mouseout', handler, false);
+        this.removeEventListener('mousemove', previewMover, false);
+        this.removeEventListener('mouseout', arguments.callee, false);
         document.querySelector('.grid').addEventListener('contextmenu', major, false);
       }, false);
 

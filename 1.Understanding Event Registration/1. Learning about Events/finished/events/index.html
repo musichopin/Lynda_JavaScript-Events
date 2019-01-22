@@ -10,18 +10,19 @@
     <div>
     <li><img src="images/ylw.gif" alt="yellow" onclick='alertFunc(this, event)'></li>
     <li><img src="images/org.gif" alt="orange"></li>
-    <li><img src="images/ppl.gif" alt="purple" onclick="alert(event.type + ' event ' + this.alt)"></li>
+    <li><img src="images/ppl.gif" alt="purple" onclick="alert(event.type + ' event on ' + this.alt)"></li>
     <li><img src="images/blu.gif" alt="blue"></li>
     <li><img src="images/pnk.gif" alt="pink" id="pink"></li>
     <li><img src="images/grn.gif" alt="green"></li>
     <li><img src="images/ygr.gif" alt="ygreen"></li>
     <li><img src="images/gry.gif" alt="gray"></li>
     <li><img src="images/red.gif" alt="red"></li>
-  </div>
+    </div>
   </ul>
 <script>
   function alertFunc(obj, e) { /*not preferred*/
-    alert("clicked on " + obj.alt)
+// obj = e.target    
+    alert("clicked on " + obj.alt + " which is same as " + e.target.alt)
     alert("event name is " + e.type)
   }
 
@@ -31,6 +32,7 @@
 
   document.getElementById('pink').addEventListener('click', function(e) {
     alert('clicked on ' + this.alt + " which is same as " + e.target.alt);
+// this = e.target    
   }, false);  /*preferred*/
 </script>
 

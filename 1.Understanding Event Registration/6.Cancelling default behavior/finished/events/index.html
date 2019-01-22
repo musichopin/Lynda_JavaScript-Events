@@ -21,7 +21,8 @@
   document.getElementById('grid').addEventListener('click', function(e) {
     e.preventDefault();
     console.log("Clicked inside the UL");
-  }, false);
+  }, false); // true olup (capturing phase) e.stopPropagation(); denseydi asagidaki evente gitmeycekti
+
 
   document.getElementById('pink').addEventListener('click', function(e) {
     e.preventDefault();

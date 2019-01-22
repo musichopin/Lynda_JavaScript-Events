@@ -13,7 +13,7 @@ img.preview {
 }
 
 .overlay {
-  display: none;
+  display: none; /*needless?*/
   position: absolute;
   top: 0;
   left: 0;
